@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 const Contact = () => {
   return (
     <>
@@ -17,7 +18,7 @@ const Contact = () => {
                 </h2>
                 <p className="mb-9 text-base leading-relaxed text-gray-600">
                   Have questions about our physiotherapy services? Need to
-                  schedule an appointment? We're here to help you on your
+                  schedule an appointment? We are here to help you on your
                   journey to recovery. Reach out to us through any of the
                   methods below.
                 </p>

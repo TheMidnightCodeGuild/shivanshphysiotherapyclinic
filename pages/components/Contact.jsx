@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Contact = () => {
   return (
@@ -19,11 +20,11 @@ const Contact = () => {
           or otherwise, we welcome the chance to serve you
         </h2>
 
-        <a
+        <Link
           href="/contactus"
           className="px-8 py-3 border-2 border-white rounded-full hover:bg-white hover:text-gray-800 transition-colors">
           Contact Us
-        </a>
+        </Link>
       </div>
     </div>
   );
