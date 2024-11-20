@@ -71,7 +71,7 @@ const Navbar = () => {
               Gallery
             </Link>
             <Link
-              href="/enquire"
+              href="/contactus"
               className="text-gray-800 hover:text-white hover:bg-[#005091] px-3 py-2 rounded-md text-base font-medium transition duration-300">
               Enquire Us
             </Link>
