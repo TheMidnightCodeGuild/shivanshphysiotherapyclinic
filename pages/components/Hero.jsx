@@ -4,36 +4,31 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <div className="pt-5 min-h-screen bg-gradient-to-b from-[#7CB9E8] to-white">
-      <div className="max-w-6xl mx-auto px-4 py-16 md:py-24">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-800  ">
+    <div className="h-screen bg-[#FAD5A5] py-12 sm:py-20">
+      <div className="max-w-6xl mx-auto px-4 py-5">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div className="space-y-4 md:space-y-6 text-center md:text-left">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-gray-800 leading-tight">
               Your Journey to Recovery Starts Here
             </h1>
-            <p className="text-xl text-gray-600 leading-relaxed">
+            <p className="text-base md:text-lg text-gray-600 leading-relaxed px-4 md:px-0">
               Expert physiotherapy care tailored to your needs. We help you
               regain mobility, reduce pain, and get back to doing what you love.
             </p>
-            <div className="flex gap-6">
+            <div className="flex justify-center md:justify-start mt-6">
               <Link
                 href="/enquire"
-                className="bg-blue-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-blue-700 transform hover:-translate-y-1 transition duration-300 shadow-lg hover:shadow-xl">
+                className="inline-block px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-sm sm:text-base font-medium border border-black bg-orange-400 hover:bg-orange-500 transition-colors duration-300 w-48 sm:w-auto text-center">
                 Book Appointment
-              </Link>
-              <Link
-                href="/procedures"
-                className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-blue-50 transform hover:-translate-y-1 transition duration-300 shadow-lg hover:shadow-xl">
-                Our Services
               </Link>
             </div>
           </div>
-          <div className="relative h-[500px] rounded-2xl overflow-hidden ">
+          <div className="relative h-[300px] sm:h-[400px] md:h-[550px] rounded-2xl overflow-hidden border-2 border-neutral-600 scale-90 -mt-5">
             <Image
-              src="https://reliva.in/wp-content/uploads/2024/02/Reliva-Effective-ResultOriented-Trusted.webp"
+              src="/images/hero.png"
               alt="Physiotherapist treating patient"
               fill
-              className="object-cover rounded-3xl"
+              className="object-cover rounded-2xl"
               priority
             />
           </div>

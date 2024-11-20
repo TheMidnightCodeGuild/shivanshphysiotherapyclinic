@@ -1,69 +1,146 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 import Navbar from "./components/Navbar";
 
 const Gallery = () => {
+  const [selectedImage, setSelectedImage] = useState(null);
+
   const images = [
     {
-      src: "https://img.freepik.com/premium-photo/physiotherapist-giving-exercise-treatment-about-knee-patient-clinic_43157-1469.jpg",
+      src: "/images/gallery1.jpg",
       alt: "Physiotherapist treating knee patient",
     },
     {
-      src: "https://img.freepik.com/premium-photo/physiotherapist-doing-healing-treatment-man-s-back-physiotherapy-center_361425-4773.jpg",
+      src: "/images/gallery2.jpg",
       alt: "Back therapy treatment",
     },
     {
-      src: "https://img.freepik.com/premium-photo/physiotherapist-doing-treatment-patient-s-back_361425-5456.jpg",
+      src: "/images/gallery3.jpg",
       alt: "Spine alignment therapy",
     },
     {
-      src: "https://img.freepik.com/premium-photo/physiotherapist-treating-patient-with-neck-problems_361425-5455.jpg",
+      src: "/images/gallery4.jpg",
       alt: "Neck therapy session",
     },
     {
-      src: "https://img.freepik.com/premium-photo/physiotherapist-doing-healing-treatment-man-s-shoulder_361425-4774.jpg",
+      src: "/images/gallery5.jpg",
       alt: "Shoulder rehabilitation",
     },
     {
-      src: "https://img.freepik.com/premium-photo/physiotherapist-treating-injured-leg-patient-clinic_43157-1466.jpg",
+      src: "/images/gallery6.jpg",
       alt: "Leg injury treatment",
+    },
+    {
+      src: "/images/gallery7.jpg",
+      alt: "Patient receiving treatment",
+    },
+    {
+      src: "/images/gallery8.jpg",
+      alt: "Patient receiving treatment",
+    },
+    {
+      src: "/images/gallery9.jpg",
+      alt: "Patient receiving treatment",
+    },
+    {
+      src: "/images/gallery10.jpg",
+      alt: "Patient receiving treatment",
+    },
+    {
+      src: "/images/gallery11.jpg",
+      alt: "Patient receiving treatment",
+    },
+    {
+      src: "/images/gallery12.jpg",
+      alt: "Patient receiving treatment",
+    },
+    {
+      src: "/images/gallery13.jpg",
+      alt: "Patient receiving treatment",
+    },
+    {
+      src: "/images/gallery14.jpg",
+      alt: "Patient receiving treatment",
     },
   ];
 
+  const openImage = (src) => {
+    setSelectedImage(src);
+  };
+
+  const closeImage = () => {
+    setSelectedImage(null);
+  };
+
   return (
-    <>
+    <div className="min-h-screen bg-[#FAD5A5] py-10">
       <Navbar />
-      <div className="h-screen bg-gradient-to-b from-[#7CB9E8]/30 to-white py-20">
-        <div className="text-center py-8 sm:py-12 md:py-16 px-4">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
+      <div className="container mx-auto px-4 py-8 md:py-16 lg:py-20">
+        <div className="text-center mb-12">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 leading-tight">
             Our Treatment Gallery
           </h1>
-          <p className="text-gray-600 mt-3 sm:mt-4 text-base sm:text-lg max-w-2xl mx-auto px-2 sm:px-4">
+          <p className="text-gray-600 mt-4 text-base md:text-lg max-w-3xl mx-auto">
             Take a look at our state-of-the-art facility and various
             physiotherapy treatments we offer to help you recover and thrive.
           </p>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 sm:pb-12 md:pb-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            {images.map((image, index) => (
-              <div
-                key={index}
-                className="relative h-64 sm:h-72 md:h-80 rounded-lg sm:rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  loading="lazy"
-                />
-              </div>
-            ))}
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {images.map((image, index) => (
+            <div
+              key={index}
+              className="group relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
+              onClick={() => openImage(image.src)}>
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300" />
+            </div>
+          ))}
         </div>
+
+        {/* Full-screen image modal */}
+        {selectedImage && (
+          <div
+            className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4"
+            onClick={closeImage}>
+            <div className="relative w-full h-full max-w-6xl max-h-[90vh] mx-auto">
+              <Image
+                src={selectedImage}
+                alt="Full-screen view"
+                className="object-contain w-full h-full"
+                fill
+                sizes="100vw"
+                priority
+              />
+              <button
+                className="absolute top-4 right-4 text-white hover:text-gray-300 focus:outline-none"
+                onClick={closeImage}>
+                <svg
+                  className="w-8 h-8"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        )}
       </div>
-    </>
+    </div>
   );
 };
 

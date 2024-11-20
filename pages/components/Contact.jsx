@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Contact = () => {
   return (
-    <div className="relative h-[380px] w-full ">
+    <div className="relative h-[400px] w-full bg-[#FAD5A5]  ">
       {/* Background image */}
       <Image
         src="/images/bg.webp"

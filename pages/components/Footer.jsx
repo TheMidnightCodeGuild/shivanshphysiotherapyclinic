@@ -56,7 +56,7 @@ const Footer = () => {
           </svg>
         </a>
       </div>
-      <footer className="text-black border-t-2 border-white bg-blue-300 py-10 sm:py-10 flex justify-center items-center  bottom-0 left-0 right-0">
+      <footer className="text-black border-t-2 border-black bg-[#f8b053] py-10 sm:py-10 flex justify-center items-center  bottom-0 left-0 right-0">
         <div className="container mx-auto px-4">
           <div className="text-center">
             <p className="text-lg sm:text-xl">

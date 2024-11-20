@@ -20,7 +20,7 @@ const Gallery = () => {
   };
 
   return (
-    <section className="min-h-screen py-2 md:py-16 lg:py-20 px-4 md:px-6 lg:px-8">
+    <section className="py-12 sm:py-32 bg-orange-50">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center pb-6 md:pb-10">
@@ -63,9 +63,9 @@ const Gallery = () => {
               <div className="relative aspect-[4/3] w-full">
                 <Image
                   className="rounded-lg object-cover cursor-pointer hover:opacity-90 transition-opacity"
-                  src="/images/image1.webp"
+                  src="/images/gallery1.jpg"
                   alt="Bathroom"
-                  onClick={() => openImage("/images/image1.webp")}
+                  onClick={() => openImage("/images/gallery1.jpg")}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
@@ -77,9 +77,9 @@ const Gallery = () => {
               <div className="relative aspect-[4/3] w-full">
                 <Image
                   className="rounded-lg object-cover cursor-pointer hover:opacity-90 transition-opacity"
-                  src="/images/image1.webp"
+                  src="/images/gallery2.jpg"
                   alt="Bathroom"
-                  onClick={() => openImage("/images/image1.webp")}
+                  onClick={() => openImage("/images/gallery2.jpg")}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
@@ -91,9 +91,9 @@ const Gallery = () => {
               <div className="relative aspect-[4/3] w-full">
                 <Image
                   className="rounded-lg object-cover cursor-pointer hover:opacity-90 transition-opacity"
-                  src="/images/image1.webp"
+                  src="/images/gallery3.jpg"
                   alt="Bathroom"
-                  onClick={() => openImage("/images/image1.webp")}
+                  onClick={() => openImage("/images/gallery3.jpg")}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
@@ -105,9 +105,9 @@ const Gallery = () => {
               <div className="relative aspect-[4/3] w-full">
                 <Image
                   className="rounded-lg object-cover cursor-pointer hover:opacity-90 transition-opacity"
-                  src="/images/image1.webp"
+                  src="/images/gallery4.jpg"
                   alt="Bathroom"
-                  onClick={() => openImage("/images/image1.webp")}
+                  onClick={() => openImage("/images/gallery4.jpg")}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
@@ -119,9 +119,9 @@ const Gallery = () => {
               <div className="relative aspect-[4/3] w-full">
                 <Image
                   className="rounded-lg object-cover cursor-pointer hover:opacity-90 transition-opacity"
-                  src="/images/image1.webp"
+                  src="/images/gallery5.jpg"
                   alt="Bathroom"
-                  onClick={() => openImage("/images/image1.webp")}
+                  onClick={() => openImage("/images/gallery5.jpg")}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
@@ -133,9 +133,93 @@ const Gallery = () => {
               <div className="relative aspect-[4/3] w-full">
                 <Image
                   className="rounded-lg object-cover cursor-pointer hover:opacity-90 transition-opacity"
-                  src="/images/image1.webp"
+                  src="/images/gallery7.jpg"
                   alt="Bathroom"
-                  onClick={() => openImage("/images/image1.webp")}
+                  onClick={() => openImage("/images/gallery7.jpg")}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="h-full">
+              <div className="relative aspect-[4/3] w-full">
+                <Image
+                  className="rounded-lg object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                  src="/images/gallery8.jpg"
+                  alt="Bathroom"
+                  onClick={() => openImage("/images/gallery8.jpg")}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="h-full">
+              <div className="relative aspect-[4/3] w-full">
+                <Image
+                  className="rounded-lg object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                  src="/images/gallery9.jpg"
+                  alt="Bathroom"
+                  onClick={() => openImage("/images/gallery9.jpg")}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="h-full">
+              <div className="relative aspect-[4/3] w-full">
+                <Image
+                  className="rounded-lg object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                  src="/images/gallery10.jpg"
+                  alt="Bathroom"
+                  onClick={() => openImage("/images/gallery10.jpg")}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="h-full">
+              <div className="relative aspect-[4/3] w-full">
+                <Image
+                  className="rounded-lg object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                  src="/images/gallery11.jpg"
+                  alt="Bathroom"
+                  onClick={() => openImage("/images/gallery11.jpg")}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="h-full">
+              <div className="relative aspect-[4/3] w-full">
+                <Image
+                  className="rounded-lg object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                  src="/images/gallery12.jpg"
+                  alt="Bathroom"
+                  onClick={() => openImage("/images/gallery12.jpg")}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="h-full">
+              <div className="relative aspect-[4/3] w-full">
+                <Image
+                  className="rounded-lg object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                  src="/images/gallery13.jpg"
+                  alt="Bathroom"
+                  onClick={() => openImage("/images/gallery13.jpg")}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
