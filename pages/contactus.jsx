@@ -25,9 +25,9 @@ const Contact = () => {
 
   return (
     <>
-      <div className="min-h-screen flex flex-col ">
+      <div className="min-h-screen flex flex-col -mt-5">
         <Navbar />
-        <section className="flex relative z-10 overflow-hidden bg-[#FAD5A5] py-12 md:py-24 mt-10">
+        <section className="flex relative z-10 overflow-hidden bg-[#FFFFFF] py-12 md:py-24 mt-10">
           <div className="container mx-auto px-4 max-w-7xl">
             <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
               {/* Contact Info */}
@@ -187,7 +187,7 @@ const Contact = () => {
                     <div>
                       <button
                         type="submit"
-                        className="w-full rounded-lg bg-blue-600 px-8 py-4 text-base font-semibold text-white transition duration-200 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2">
+                        className="w-full rounded-lg bg-orange-600 px-8 py-4 text-base font-semibold text-white transition duration-200 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2">
                         Send Message
                       </button>
                     </div>

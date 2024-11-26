@@ -29,28 +29,28 @@ const About = () => {
             <div className="space-y-4">
               <div className="flex items-center gap-2">
                 <span className="text-orange-500">✓</span>
-                <p className="text-gray-700">
+                <p className="text-gray-700 font-semibold">
                   Ex. Consultant Physiotherapist - Government Dhanvantari
                   Hospital
                 </p>
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-orange-500">✓</span>
-                <p className="text-gray-700">
+                <p className="text-gray-700 font-semibold">
                   Ex. Consultant Physiotherapist - Jeewandeep Physiotherapy
                   Center, Kharakua
                 </p>
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-orange-500">✓</span>
-                <p className="text-gray-700">
+                <p className="text-gray-700 font-semibold">
                   Present Consultant Physiotherapist - Jain Multi-Speciality
                   Hospital, Freeganj Ujjain
                 </p>
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-orange-500">✓</span>
-                <p className="text-gray-700">
+                <p className="text-gray-700 font-semibold">
                   Ex. Visiting Physiotherapist - Goa Ranji Team, BCCI
                 </p>
               </div>

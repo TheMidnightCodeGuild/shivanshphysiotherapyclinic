@@ -74,7 +74,7 @@ const Gallery = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAD5A5] py-10">
+    <div className="min-h-screen bg-[#FFFFFF] py-10">
       <Navbar />
       <div className="container mx-auto px-4 py-8 md:py-16 lg:py-20">
         <div className="text-center mb-12">

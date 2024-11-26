@@ -1,6 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -51,7 +51,7 @@ const Testimonial = () => {
         }
       `}</style>
 
-      <section className="py-12 sm:py-44 bg-[#FAD5A5]">
+      <section className="py-12 sm:py-44 bg-[#FFFFFF]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center items-center gap-y-8 lg:gap-y-0 flex-wrap md:flex-wrap lg:flex-nowrap lg:flex-row lg:justify-between lg:gap-x-8 max-w-sm sm:max-w-2xl lg:max-w-full mx-auto">
             <div className="w-full lg:w-2/5">
@@ -59,9 +59,9 @@ const Testimonial = () => {
                 Testimonial
               </span>
               <h2 className="text-4xl font-bold text-gray-900 leading-[3.25rem] mb-8">
-                23k+ Customers gave their{" "}
+                Many patients gave their{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-tr from-indigo-600 to-violet-600">
-                  Feedback
+                  valuable feedback
                 </span>
               </h2>
 
@@ -106,11 +106,15 @@ const Testimonial = () => {
             <div className="w-full lg:w-3/5">
               {/* Slider wrapper */}
               <Swiper
-                modules={[Navigation]}
+                modules={[Navigation, Autoplay]}
                 slidesPerView={2}
                 spaceBetween={28}
                 centeredSlides={false}
                 loop={true}
+                autoplay={{
+                  delay: 3000,
+                  disableOnInteraction: false,
+                }}
                 pagination={{
                   clickable: true,
                 }}

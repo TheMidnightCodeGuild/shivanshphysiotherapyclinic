@@ -6,18 +6,18 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-[#FAF9F6] shadow-lg h-20 sm:h-20 w-full z-50 border-b-2 border-neutral-400 fixed top-0">
+    <nav className="bg-orange-100  h-20 sm:h-20 w-full z-50 border-b-2 border-neutral-100 fixed top-0">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center mt-6 sm:mt-0">
+          <div className="flex items-center mt-6 sm:mt-5">
             <Link href="/">
               <Image
                 src="/images/logo.png"
                 alt="Logo"
                 width={150}
                 height={50}
-                className="object-cover"
+                className="object-cover w-36 h-20 sm:w-40 sm:h-20"
                 priority
               />
             </Link>
