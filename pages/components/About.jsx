@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const About = () => {
   return (
-    <section className="py-12 sm:py-32 bg-orange-50">
+    <section className="py-12 sm:py-28 bg-orange-50 ">
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left side - Doctor's Photo */}
@@ -29,28 +29,28 @@ const About = () => {
             <div className="space-y-4">
               <div className="flex items-center gap-2">
                 <span className="text-orange-500">✓</span>
-                <p className="text-gray-700 font-semibold">
+                <p className="text-gray-700 font-semibold text-lg">
                   Ex. Consultant Physiotherapist - Government Dhanvantari
                   Hospital
                 </p>
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-orange-500">✓</span>
-                <p className="text-gray-700 font-semibold">
+                <p className="text-gray-700 font-semibold text-lg">
                   Ex. Consultant Physiotherapist - Jeewandeep Physiotherapy
                   Center, Kharakua
                 </p>
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-orange-500">✓</span>
-                <p className="text-gray-700 font-semibold">
+                <p className="text-gray-700 font-semibold text-lg">
                   Present Consultant Physiotherapist - Jain Multi-Speciality
                   Hospital, Freeganj Ujjain
                 </p>
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-orange-500">✓</span>
-                <p className="text-gray-700 font-semibold">
+                <p className="text-gray-700 font-semibold text-lg">
                   Ex. Visiting Physiotherapist - Goa Ranji Team, BCCI
                 </p>
               </div>

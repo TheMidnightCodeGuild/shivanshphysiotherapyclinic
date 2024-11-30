@@ -7,16 +7,28 @@ import Galleryswiper from "./components/Galleryswiper";
 import Footer from "./components/Footer";
 import Testimonial from "./components/Testimonial";
 import About from "./components/About";
+import Marquee from "./components/Marquee";
+import Videos from "./components/Videos";
+import Banner2 from "./components/Banner2";
+import Videotesti from "./components/Videotesti";
+import Contactus from "./enquire";
+import Cont from "./components/Cont";
 const index = () => {
   return (
     <div className="overflow-x-hidden">
       <Navbar />
       <Hero />
+      <Marquee />
       <About />
       <Conditions />
       <Galleryswiper />
       <Contact />
+      <Videos />
+      <Banner2 />
+      <Videotesti />
       <Testimonial />
+
+      <Cont />
       <Footer />
     </div>
   );

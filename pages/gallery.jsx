@@ -65,6 +65,30 @@ const Gallery = () => {
     },
   ];
 
+  const testimonialVideos = [
+    {
+      url: "/videos/testimonial1.mp4",
+      thumbnail: "/images/video-thumb1.jpg",
+      title: "Recovery Journey - John's Story",
+      description:
+        "Hear how physiotherapy helped John recover from a severe back injury",
+    },
+    {
+      url: "/videos/testimonial2.mp4",
+      thumbnail: "/images/video-thumb2.jpg",
+      title: "Sarah's Rehabilitation Success",
+      description:
+        "Sarah shares her experience with our shoulder rehabilitation program",
+    },
+    {
+      url: "/videos/testimonial3.mp4",
+      thumbnail: "/images/video-thumb3.jpg",
+      title: "Sports Injury Recovery - Mike's Testimonial",
+      description:
+        "Professional athlete Mike discusses his return to sports after treatment",
+    },
+  ];
+
   const openImage = (src) => {
     setSelectedImage(src);
   };
@@ -104,6 +128,43 @@ const Gallery = () => {
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300" />
             </div>
           ))}
+        </div>
+
+        {/* Video Testimonials Section */}
+        <div className="mt-20 bg">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 leading-tight">
+              Patient Testimonials
+            </h2>
+            <p className="text-gray-600 mt-4 text-base md:text-lg max-w-3xl mx-auto">
+              Watch our patients share their recovery journeys and success
+              stories
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {testimonialVideos.map((video, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div className="relative aspect-video">
+                  <video
+                    className="w-full h-full object-cover"
+                    poster={video.thumbnail}
+                    controls>
+                    <source src={video.url} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                    {video.title}
+                  </h3>
+                  <p className="text-gray-600">{video.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Full-screen image modal */}

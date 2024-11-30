@@ -63,10 +63,10 @@ const Footer = () => {
               © {new Date().getFullYear()} shivanshphysiotherapyclinic.com |
               Website Designed and Developed By{" "}
               <a
-                href="https://shivanshphysiotherapyclinic.com"
+                href="https://www.noxalgo.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-green-300 transition-colors">
+                className="hover:text-orange-500 transition-colors">
                 NOXALGO LLP
               </a>
             </p>
