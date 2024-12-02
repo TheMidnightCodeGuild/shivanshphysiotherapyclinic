@@ -26,7 +26,7 @@ const AboutUs = () => {
           <div className="w-full lg:w-1/2">
             <div className="relative h-[500px] w-full rounded-2xl overflow-hidden">
               <Image
-                src="/images/about.png"
+                src="/images/About.png"
                 alt="Physiotherapy Equipment"
                 fill
                 className="object-cover"
