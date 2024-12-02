@@ -1,38 +1,38 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-
+import Image from "next/image";
 const Procedures = () => {
   const procedures = [
     {
       title: "Manual Therapy",
       description:
         "Hands-on techniques to manipulate joints and soft tissues, improving mobility and reducing pain.",
-      image: "/images/manual-therapy.jpg",
+      image: "/images/manual.jpg",
     },
     {
       title: "Exercise Therapy",
       description:
         "Customized exercise programs to strengthen muscles, improve flexibility and restore function.",
-      image: "/images/exercise-therapy.jpg",
+      image: "/images/exercise.jpg",
     },
     {
       title: "Electrotherapy",
       description:
         "Using electrical stimulation to reduce pain, improve circulation and promote healing.",
-      image: "/images/electrotherapy.jpg",
+      image: "/images/electro.webp",
     },
     {
       title: "Sports Rehabilitation",
       description:
         "Specialized treatment for sports injuries to help athletes return to peak performance.",
-      image: "/images/sports-rehab.jpg",
+      image: "/images/sports.png",
     },
     {
       title: "Neurological Rehabilitation",
       description:
         "Treatment for conditions affecting the nervous system, improving movement and coordination.",
-      image: "/images/neuro-rehab.jpg",
+      image: "/images/neuro.jpg",
     },
     {
       title: "Posture Correction",
@@ -62,10 +62,11 @@ const Procedures = () => {
               <div
                 key={index}
                 className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div className="h-48 relative">
-                  <img
+                <div className="h-52 scale-95 relative">
+                  <Image
                     src={procedure.image}
                     alt={procedure.title}
+                    fill
                     className="w-full h-full object-cover"
                   />
                 </div>

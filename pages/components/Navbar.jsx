@@ -13,11 +13,12 @@ const Navbar = () => {
           <div className="flex items-center mt-6 sm:mt-5">
             <Link href="/">
               <Image
-                src="/images/logo.png"
+                src="/images/logo1.png"
                 alt="Logo"
                 width={150}
                 height={50}
-                className="object-cover w-36 h-20 sm:w-40 sm:h-20"
+                className="object-cover w-72 h-20 sm:w-72 sm:h-20"
+                quality={100}
                 priority
               />
             </Link>

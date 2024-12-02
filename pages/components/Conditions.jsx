@@ -21,7 +21,7 @@ const Conditions = () => {
       alt: "Sports injury treatment",
     },
     {
-      title: "Joint Pain",
+      title: "Knee & Ankle Pain",
       mainCondition: "Knee Arthritis",
       secondaryCondition: "Shoulder Pain",
       additionalCount: 3,
@@ -48,11 +48,11 @@ const Conditions = () => {
       alt: "Post-surgical rehabilitation",
     },
     {
-      title: "Pediatric Conditions",
+      title: "Shoulder & Elbow ",
       mainCondition: "Cerebral Palsy",
       secondaryCondition: "Developmental Delays",
       additionalCount: 2,
-      image: "https://reliva.in/wp-content/uploads/2023/12/srv-back-pain.webp",
+      image: "/images/shoulder.webp",
       alt: "Pediatric physiotherapy",
     },
     {
@@ -60,30 +60,29 @@ const Conditions = () => {
       mainCondition: "Pregnancy Care",
       secondaryCondition: "Postpartum Recovery",
       additionalCount: 2,
-      image:
-        "https://cdn-djmgl.nitrocdn.com/WKDrbFhGmXUqrdsfVwgWscBHIyiXYRMC/assets/images/optimized/rev-b6df2e9/reliva.in/wp-content/uploads/2023/12/Women-Physio-2.webp",
+      image: "/images/women.webp",
       alt: "Women's health physiotherapy",
     },
     {
-      title: "Respiratory Conditions",
+      title: "Cardiac & Respiratory",
       mainCondition: "COPD",
       secondaryCondition: "Post-Covid Recovery",
       additionalCount: 2,
-      image: "https://reliva.in/wp-content/uploads/2023/12/srv-back-pain.webp",
+      image: "/images/cardiac.webp",
       alt: "Respiratory physiotherapy",
     },
     {
-      title: "Workplace Injuries",
+      title: "Hip & Pelvic Pain",
       mainCondition: "Repetitive Strain",
       secondaryCondition: "Postural Problems",
       additionalCount: 2,
-      image: "https://reliva.in/wp-content/uploads/2023/12/srv-back-pain.webp",
+      image: "/images/hip.webp",
       alt: "Workplace injury rehabilitation",
     },
   ];
 
   return (
-    <section className="py-12 sm:py-24 bg-[#FFFFFF]">
+    <section className="py-12 sm:py-24 bg-[#FAD5A5]">
       <div className="max-w-[1300px] mx-auto px-4">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-2 sm:mb-4">
@@ -94,7 +93,7 @@ const Conditions = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-4 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6  ">
           {conditions.map((condition, index) => (
             <div
               key={index}

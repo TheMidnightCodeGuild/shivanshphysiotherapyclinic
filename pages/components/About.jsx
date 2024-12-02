@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const About = () => {
   return (
-    <section className="py-12 sm:py-28 bg-orange-50 ">
+    <section className="py-12 sm:py-20 bg-white ">
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left side - Doctor's Photo */}

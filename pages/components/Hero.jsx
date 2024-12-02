@@ -19,12 +19,12 @@ const Hero = () => {
             <div className="flex justify-center md:justify-start mt-6">
               <Link
                 href="/enquire"
-                className="inline-block px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-sm sm:text-base font-medium border border-black bg-orange-400 hover:bg-orange-500 transition-colors duration-300 w-48 sm:w-auto text-center">
+                className="inline-block px-4 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-base font-medium border border-black bg-orange-400 hover:bg-orange-500 transition-colors duration-300 w-48 sm:w-auto text-center">
                 Book Appointment
               </Link>
             </div>
           </div>
-          <div className="relative h-[300px] sm:h-[400px] md:h-[550px] rounded-2xl overflow-hidden border-2 border-neutral-600 scale-90 -mt-5">
+          <div className="relative h-[300px] sm:h-[400px] md:h-[600px] rounded-2xl overflow-hidden  -mt-5">
             <Image
               src="/images/hero.png"
               alt="Physiotherapist treating patient"
