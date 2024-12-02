@@ -14,16 +14,34 @@ const Contact = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState(null);
+  const [availableSlots, setAvailableSlots] = useState({});
 
-  const timeSlots = {
-    "09:00 AM": false,
-    "10:00 AM": true,
-    "11:00 AM": false,
-    "12:00 PM": false,
-    "02:00 PM": true,
-    "03:00 PM": false,
-    "04:00 PM": false,
-    "05:00 PM": false,
+  const timeSlots = [
+    "09:00 AM",
+    "10:00 AM",
+    "11:00 AM",
+    "12:00 PM",
+    "02:00 PM",
+    "03:00 PM",
+    "04:00 PM",
+    "05:00 PM"
+  ];
+
+  const fetchAvailability = async (selectedDate) => {
+    try {
+      const res = await fetch(`/api/book/bookings?date=${selectedDate}`);
+      const data = await res.json();
+      
+      if (res.ok) {
+        const availability = {};
+        timeSlots.forEach(slot => {
+          availability[slot] = (data.data[slot] || 0) >= 5;
+        });
+        setAvailableSlots(availability);
+      }
+    } catch (error) {
+      console.error('Error fetching availability:', error);
+    }
   };
 
   const handleChange = (e) => {
@@ -31,6 +49,10 @@ const Contact = () => {
       ...formData,
       [e.target.name]: e.target.value,
     });
+    
+    if (e.target.name === 'date') {
+      fetchAvailability(e.target.value);
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -39,7 +61,7 @@ const Contact = () => {
     setStatus("Submitting...");
 
     try {
-      const res = await fetch("/api/form-data", {
+      const res = await fetch("/api/bookings", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -59,6 +81,9 @@ const Contact = () => {
           date: "",
           timeSlot: "",
         });
+        if (formData.date) {
+          fetchAvailability(formData.date);
+        }
       } else {
         setStatus(`Error: ${data.error}`);
       }
@@ -148,12 +173,12 @@ const Contact = () => {
                     </div>
 
                     <div className="grid grid-cols-2 gap-4">
-                      {Object.entries(timeSlots).map(([time, isBooked]) => (
+                      {timeSlots.map((time) => (
                         <button
                           key={time}
                           type="button"
                           onClick={() =>
-                            !isBooked &&
+                            !availableSlots[time] &&
                             handleChange({
                               target: { name: "timeSlot", value: time },
                             })
@@ -161,14 +186,14 @@ const Contact = () => {
                           className={`p-3 rounded-lg text-center transition-all duration-200 ${
                             formData.timeSlot === time
                               ? "bg-orange-600 text-white shadow-md"
-                              : isBooked
+                              : availableSlots[time]
                               ? "bg-gray-100 text-gray-400 cursor-not-allowed"
                               : "bg-gray-50 text-gray-800 hover:bg-gray-100"
                           }`}
-                          disabled={isBooked}>
+                          disabled={availableSlots[time]}>
                           {time}
-                          {isBooked && (
-                            <span className="block text-xs mt-1">(Booked)</span>
+                          {availableSlots[time] && (
+                            <span className="block text-xs mt-1">(Fully Booked)</span>
                           )}
                         </button>
                       ))}
