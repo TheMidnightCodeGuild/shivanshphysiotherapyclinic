@@ -24,23 +24,23 @@ const Contact = () => {
     "02:00 PM",
     "03:00 PM",
     "04:00 PM",
-    "05:00 PM"
+    "05:00 PM",
   ];
 
   const fetchAvailability = async (selectedDate) => {
     try {
       const res = await fetch(`/api/book/bookings?date=${selectedDate}`);
       const data = await res.json();
-      
+
       if (res.ok) {
         const availability = {};
-        timeSlots.forEach(slot => {
+        timeSlots.forEach((slot) => {
           availability[slot] = (data.data[slot] || 0) >= 5;
         });
         setAvailableSlots(availability);
       }
     } catch (error) {
-      console.error('Error fetching availability:', error);
+      console.error("Error fetching availability:", error);
     }
   };
 
@@ -49,8 +49,8 @@ const Contact = () => {
       ...formData,
       [e.target.name]: e.target.value,
     });
-    
-    if (e.target.name === 'date') {
+
+    if (e.target.name === "date") {
       fetchAvailability(e.target.value);
     }
   };
@@ -61,7 +61,7 @@ const Contact = () => {
     setStatus("Submitting...");
 
     try {
-      const res = await fetch("/api/bookings", {
+      const res = await fetch("/api/book/bookings", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -193,7 +193,9 @@ const Contact = () => {
                           disabled={availableSlots[time]}>
                           {time}
                           {availableSlots[time] && (
-                            <span className="block text-xs mt-1">(Fully Booked)</span>
+                            <span className="block text-xs mt-1">
+                              (Fully Booked)
+                            </span>
                           )}
                         </button>
                       ))}
