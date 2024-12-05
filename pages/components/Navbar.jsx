@@ -6,18 +6,18 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-orange-100  h-20 sm:h-20 w-full z-50 border-b-2 border-neutral-100 fixed top-0">
+    <nav className="bg-amber-800  h-20 sm:h-20 w-full z-50  top-0">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center mt-6 sm:mt-5">
+          <div className="flex items-center mt-6 sm:mt-5 ">
             <Link href="/">
               <Image
-                src="/images/logo1.png"
+                src="/images/logo2.png"
                 alt="Logo"
                 width={150}
                 height={50}
-                className="object-cover w-72 h-20 sm:w-72 sm:h-20"
+                className="object-cover w-full h-full mt-20 "
                 quality={100}
                 priority
               />
@@ -66,17 +66,17 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-8 mt-6">
             <Link
               href="/procedures"
-              className="text-gray-800 hover:text-white hover:bg-[#FAD5A5] px-3 py-2 rounded-md text-base font-medium transition duration-300">
+              className="text-white hover:text-amber-800 hover:bg-[#FAD5A5] px-3 py-2 rounded-md text-base font-medium transition duration-300">
               Procedures
             </Link>
             <Link
               href="/gallery"
-              className="text-gray-800 hover:text-white hover:bg-[#FAD5A5] px-3 py-2 rounded-md text-base font-medium transition duration-300">
+              className="text-white hover:text-amber-800 hover:bg-[#FAD5A5] px-3 py-2 rounded-md text-base font-medium transition duration-300">
               Gallery
             </Link>
             <Link
               href="/enquire"
-              className="text-gray-100 hover:text-white hover:bg-[#FAD5A5] px-3 py-2 rounded-full text-base font-medium transition duration-300 border-2 border-orange-500 bg-orange-500 ">
+              className="text-gray-900 hover:text-amber-800 hover:bg-[#FAD5A5] px-3 py-2 rounded-full text-base font-medium transition duration-300 border-2 border-amber-800 bg-white ">
               Book Now
             </Link>
           </div>
