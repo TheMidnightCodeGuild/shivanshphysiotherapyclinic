@@ -9,6 +9,12 @@ const AdminPanel = () => {
   const [activeTab, setActiveTab] = useState('enquiries');
   const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split('T')[0]);
   const [selectedTimeSlot, setSelectedTimeSlot] = useState(null);
+  const [reviewForm, setReviewForm] = useState({
+    name: '',
+    title: '',
+    rating: 5,
+    comment: ''
+  });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -49,6 +55,40 @@ const AdminPanel = () => {
     }
   };
 
+  const handleReviewSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch('/api/reviews/addReview', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(reviewForm),
+      });
+
+      if (!res.ok) throw new Error('Failed to add review');
+
+      setReviewForm({
+        name: '',
+        title: '',
+        rating: 5,
+        comment: ''
+      });
+
+      alert('Review added successfully!');
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
+  const handleReviewChange = (e) => {
+    const { name, value } = e.target;
+    setReviewForm(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
   if (loading) return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
   if (error) return <div className="min-h-screen flex items-center justify-center text-red-500">Error: {error}</div>;
 
@@ -69,6 +109,12 @@ const AdminPanel = () => {
             onClick={() => setActiveTab('bookings')}
           >
             Bookings
+          </button>
+          <button 
+            className={`px-4 py-2 rounded ${activeTab === 'reviews' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+            onClick={() => setActiveTab('reviews')}
+          >
+            Add Review
           </button>
         </div>
       </div>
@@ -150,6 +196,68 @@ const AdminPanel = () => {
               <div className="text-center text-gray-500">No bookings found for this date</div>
             )}
           </div>
+        </div>
+      )}
+
+      {activeTab === 'reviews' && (
+        <div className="max-w-2xl mx-auto">
+          <form onSubmit={handleReviewSubmit} className="bg-white p-6 rounded-lg shadow-md">
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
+              <input
+                type="text"
+                name="name"
+                value={reviewForm.name}
+                onChange={handleReviewChange}
+                className="w-full p-2 border rounded"
+                required
+              />
+            </div>
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-gray-700 mb-2">Title</label>
+              <input
+                type="text"
+                name="title"
+                value={reviewForm.title}
+                onChange={handleReviewChange}
+                className="w-full p-2 border rounded"
+                required
+              />
+            </div>
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-gray-700 mb-2">Rating</label>
+              <select
+                name="rating"
+                value={reviewForm.rating}
+                onChange={handleReviewChange}
+                className="w-full p-2 border rounded"
+                required
+              >
+                <option value="5">5 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="2">2 Stars</option>
+                <option value="1">1 Star</option>
+              </select>
+            </div>
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-gray-700 mb-2">Comment</label>
+              <textarea
+                name="comment"
+                value={reviewForm.comment}
+                onChange={handleReviewChange}
+                className="w-full p-2 border rounded"
+                rows="4"
+                required
+              />
+            </div>
+            <button
+              type="submit"
+              className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+            >
+              Add Review
+            </button>
+          </form>
         </div>
       )}
     </div>
