@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
+import Image from "next/image";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -12,11 +13,11 @@ const Testimonial = () => {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await fetch('/api/reviews/getReviews');
+        const response = await fetch("/api/reviews/getReviews");
         const data = await response.json();
         setReviews(data);
       } catch (error) {
-        console.error('Error fetching reviews:', error);
+        console.error("Error fetching reviews:", error);
       } finally {
         setLoading(false);
       }
@@ -162,8 +163,18 @@ const Testimonial = () => {
                     },
                   }}>
                   {reviews.map((review, index) => (
-                    <SwiperSlide key={index} className="group bg-white border border-solid border-gray-300 rounded-2xl max-sm:max-w-sm max-sm:mx-auto p-6 transition-all duration-500 hover:border-indigo-600">
+                    <SwiperSlide
+                      key={index}
+                      className="group bg-white border border-solid border-gray-300 rounded-2xl max-sm:max-w-sm max-sm:mx-auto p-6 transition-all duration-500 hover:border-indigo-600">
                       <div className="flex items-center gap-5 mb-5 sm:mb-9">
+                        <div className="relative w-12 h-12 rounded-full overflow-hidden">
+                          <Image
+                            src="/images/avatar.png"
+                            alt="User avatar"
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
                         <div className="grid gap-1">
                           <h5 className="text-gray-900 font-medium transition-all duration-500">
                             {review.name}

@@ -83,8 +83,8 @@ const Contact = () => {
                     ADDRESS
                   </h2>
                   <p className="mt-1 text-sm sm:text-base">
-                    B-27/5, Indore Rd, near Mahamritunjay Dwar, Vasant Vihar,
-                    Ujjain, Madhya Pradesh 456010
+                    Address - 312 / C sector, Vivekanand colony,Near Kanha
+                    Dairy, Vivekanand Garden, Ujjain
                   </p>
                 </div>
                 <div>

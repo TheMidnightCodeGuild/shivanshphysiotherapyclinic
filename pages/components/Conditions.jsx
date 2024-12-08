@@ -1,5 +1,10 @@
 import React from "react";
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
+import "swiper/css";
+
+import "swiper/css/pagination";
 
 const Conditions = () => {
   const conditions = [
@@ -32,7 +37,7 @@ const Conditions = () => {
     {
       title: "Geriatric Care",
       mainCondition: "Balance Disorders",
-      secondaryCondition: "Parkinson’s",
+      secondaryCondition: "Parkinson's",
       additionalCount: 2,
       image:
         "https://cdn-djmgl.nitrocdn.com/WKDrbFhGmXUqrdsfVwgWscBHIyiXYRMC/assets/images/optimized/rev-b6df2e9/reliva.in/wp-content/uploads/2023/12/co-geriatric-care.webp",
@@ -93,11 +98,55 @@ const Conditions = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6  ">
+        <div className="block md:hidden">
+          <Swiper
+            modules={[Autoplay]}
+            slidesPerView={1}
+            spaceBetween={20}
+            loop={true}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            pagination={{
+              clickable: true,
+            }}>
+            {conditions.map((condition, index) => (
+              <SwiperSlide key={index}>
+                <div className="bg-white rounded-xl overflow-hidden flex flex-col w-full border border-[#E0E0E0]">
+                  <div className="relative w-full h-48">
+                    <Image
+                      src={condition.image}
+                      alt={condition.alt}
+                      fill
+                      className="object-cover rounded-xl"
+                    />
+                  </div>
+                  <div className="w-full p-3">
+                    <h3 className="text-lg font-semibold text-[#1F3E5A] mb-3">
+                      {condition.title}
+                    </h3>
+                    <p className="text-sm text-gray-700 mb-2 border-b border-gray-200">
+                      {condition.mainCondition}
+                    </p>
+                    <p className="text-sm text-gray-700 mb-2 border-b border-gray-200">
+                      {condition.secondaryCondition}
+                    </p>
+                    <p className="text-sm text-green-500">
+                      +{condition.additionalCount} Conditions
+                    </p>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+
+        <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {conditions.map((condition, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl overflow-hidden flex flex-col sm:flex-row w-full sm:w-auto border border-[#E0E0E0] ">
+              className="bg-white rounded-xl overflow-hidden flex flex-col sm:flex-row w-full sm:w-auto border border-[#E0E0E0]">
               <div className="relative w-full sm:w-56 h-48 sm:h-40">
                 <Image
                   src={condition.image}
@@ -110,10 +159,10 @@ const Conditions = () => {
                 <h3 className="text-lg sm:text-lg font-semibold text-[#1F3E5A] mb-3 sm:mb-2">
                   {condition.title}
                 </h3>
-                <p className="text-sm sm:text-base text-gray-700 mb-2 border-b border-gray-200 ">
+                <p className="text-sm sm:text-base text-gray-700 mb-2 border-b border-gray-200">
                   {condition.mainCondition}
                 </p>
-                <p className="text-sm sm:text-base text-gray-700 mb-2 border-b border-gray-200 ">
+                <p className="text-sm sm:text-base text-gray-700 mb-2 border-b border-gray-200">
                   {condition.secondaryCondition}
                 </p>
                 <p className="text-sm sm:text-base text-green-500">
