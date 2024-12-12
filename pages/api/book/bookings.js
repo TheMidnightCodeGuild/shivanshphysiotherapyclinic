@@ -46,7 +46,7 @@ export default async function handler(req, res) {
         // Configure email content
         const mailOptions = {
           from: process.env.EMAIL,
-          to: "mayanktilwankar2355@gmail.com",
+          to: "naveen.moghi@yahoo.in",
           subject: `New Booking from ${booking.name}!`,
           text: `
             New booking details:

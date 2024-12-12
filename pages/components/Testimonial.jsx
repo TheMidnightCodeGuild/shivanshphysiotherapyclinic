@@ -41,14 +41,29 @@ const Testimonial = () => {
 
         .swiper-button-next svg,
         .swiper-button-prev svg {
-          width: 24px !important;
-          height: 24px !important;
+          width: 20px !important;
+          height: 20px !important;
+        }
+
+        @media (min-width: 768px) {
+          .swiper-button-next svg,
+          .swiper-button-prev svg {
+            width: 24px !important;
+            height: 24px !important;
+          }
         }
 
         .swiper-button-next,
         .swiper-button-prev {
           position: relative !important;
-          margin-top: 32px;
+          margin-top: 24px;
+        }
+
+        @media (min-width: 768px) {
+          .swiper-button-next,
+          .swiper-button-prev {
+            margin-top: 32px;
+          }
         }
 
         .swiper-slide.swiper-slide-active {
@@ -71,27 +86,27 @@ const Testimonial = () => {
         }
       `}</style>
 
-      <section className="py-12 sm:py-44 bg-[#FFFFFF]">
+      <section className="py-8 sm:py-12 md:py-20 lg:py-44 bg-[#FFFFFF] pt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-center items-center gap-y-8 lg:gap-y-0 flex-wrap md:flex-wrap lg:flex-nowrap lg:flex-row lg:justify-between lg:gap-x-8 max-w-sm sm:max-w-2xl lg:max-w-full mx-auto">
-            <div className="w-full lg:w-2/5">
-              <span className="text-sm text-gray-500 font-medium mb-4 block">
+          <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-x-8 max-w-sm sm:max-w-2xl lg:max-w-full mx-auto">
+            <div className="w-full lg:w-2/5 text-center lg:text-left">
+              <span className="text-xs sm:text-sm text-gray-500 font-medium mb-2 sm:mb-4 block">
                 Testimonial
               </span>
-              <h2 className="text-4xl font-bold text-gray-900 leading-[3.25rem] mb-8">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight lg:leading-[3.25rem] mb-6 lg:mb-8">
                 Many patients gave their{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-tr from-indigo-600 to-violet-600">
                   valuable feedback
                 </span>
               </h2>
 
-              {/* Slider controls */}
-              <div className="flex items-center justify-center lg:justify-start gap-6">
+              {/* Slider controls - Only visible on larger screens */}
+              <div className="hidden lg:flex items-center justify-center lg:justify-start gap-4 sm:gap-6">
                 <button
                   id="slider-button-left"
-                  className="swiper-button-prev group flex justify-center items-center border border-solid border-indigo-600 w-12 h-12 transition-all duration-300 hover:bg-indigo-600 hover:shadow-lg">
+                  className="swiper-button-prev group flex justify-center items-center border border-solid border-indigo-600 w-10 h-10 sm:w-12 sm:h-12 transition-all duration-300 hover:bg-indigo-600 hover:shadow-lg">
                   <svg
-                    className="h-5 w-5 text-indigo-600 group-hover:text-white transition-colors duration-300"
+                    className="h-4 w-4 sm:h-5 sm:w-5 text-indigo-600 group-hover:text-white transition-colors duration-300"
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -106,9 +121,9 @@ const Testimonial = () => {
                 </button>
                 <button
                   id="slider-button-right"
-                  className="swiper-button-next group flex justify-center items-center border border-solid border-indigo-600 w-12 h-12 transition-all duration-300 hover:bg-indigo-600 hover:shadow-lg">
+                  className="swiper-button-next group flex justify-center items-center border border-solid border-indigo-600 w-10 h-10 sm:w-12 sm:h-12 transition-all duration-300 hover:bg-indigo-600 hover:shadow-lg">
                   <svg
-                    className="h-5 w-5 text-indigo-600 group-hover:text-white transition-colors duration-300"
+                    className="h-4 w-4 sm:h-5 sm:w-5 text-indigo-600 group-hover:text-white transition-colors duration-300"
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -123,16 +138,16 @@ const Testimonial = () => {
                 </button>
               </div>
             </div>
-            <div className="w-full lg:w-3/5">
+            <div className="w-full lg:w-3/5 mt-8 lg:mt-0">
               {loading ? (
-                <div className="flex justify-center items-center h-64">
+                <div className="flex justify-center items-center h-48 sm:h-64">
                   <p>Loading reviews...</p>
                 </div>
               ) : (
                 <Swiper
                   modules={[Navigation, Autoplay]}
-                  slidesPerView={2}
-                  spaceBetween={28}
+                  slidesPerView={1}
+                  spaceBetween={16}
                   centeredSlides={false}
                   loop={true}
                   autoplay={{
@@ -147,15 +162,13 @@ const Testimonial = () => {
                     prevEl: ".swiper-button-prev",
                   }}
                   breakpoints={{
-                    0: {
+                    640: {
                       slidesPerView: 1,
                       spaceBetween: 20,
-                      centeredSlides: false,
                     },
                     768: {
                       slidesPerView: 2,
-                      spaceBetween: 28,
-                      centeredSlides: false,
+                      spaceBetween: 24,
                     },
                     1024: {
                       slidesPerView: 2,
@@ -165,9 +178,9 @@ const Testimonial = () => {
                   {reviews.map((review, index) => (
                     <SwiperSlide
                       key={index}
-                      className="group bg-white border border-solid border-gray-300 rounded-2xl max-sm:max-w-sm max-sm:mx-auto p-6 transition-all duration-500 hover:border-indigo-600">
-                      <div className="flex items-center gap-5 mb-5 sm:mb-9">
-                        <div className="relative w-12 h-12 rounded-full overflow-hidden">
+                      className="group bg-white border border-solid border-gray-300 rounded-2xl p-4 sm:p-6 transition-all duration-500 hover:border-indigo-600">
+                      <div className="flex items-center gap-3 sm:gap-5 mb-4 sm:mb-6">
+                        <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden">
                           <Image
                             src="/images/avatar.png"
                             alt="User avatar"
@@ -175,20 +188,20 @@ const Testimonial = () => {
                             className="object-cover"
                           />
                         </div>
-                        <div className="grid gap-1">
-                          <h5 className="text-gray-900 font-medium transition-all duration-500">
+                        <div className="grid gap-0.5 sm:gap-1">
+                          <h5 className="text-sm sm:text-base text-gray-900 font-medium transition-all duration-500">
                             {review.name}
                           </h5>
-                          <span className="text-sm leading-6 text-gray-500">
+                          <span className="text-xs sm:text-sm leading-5 sm:leading-6 text-gray-500">
                             {review.title}
                           </span>
                         </div>
                       </div>
-                      <div className="flex items-center mb-5 sm:mb-9 gap-2 text-amber-500 transition-all duration-500">
+                      <div className="flex items-center mb-4 sm:mb-6 gap-1.5 sm:gap-2 text-amber-500 transition-all duration-500">
                         {[...Array(review.rating || 5)].map((_, i) => (
                           <svg
                             key={i}
-                            className="w-5 h-5"
+                            className="w-4 h-4 sm:w-5 sm:h-5"
                             viewBox="0 0 18 17"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -199,7 +212,7 @@ const Testimonial = () => {
                           </svg>
                         ))}
                       </div>
-                      <p className="text-sm text-gray-500 leading-6 transition-all duration-500 min-h-24 group-hover:text-gray-800">
+                      <p className="text-xs sm:text-sm text-gray-500 leading-5 sm:leading-6 transition-all duration-500 min-h-[4.5rem] sm:min-h-24 group-hover:text-gray-800">
                         {review.comment}
                       </p>
                     </SwiperSlide>
