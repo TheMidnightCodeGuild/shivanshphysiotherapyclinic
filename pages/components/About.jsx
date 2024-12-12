@@ -9,7 +9,7 @@ const About = () => {
           {/* Left side - Doctor's Photo */}
           <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden border-2 border-neutral-600">
             <Image
-              src="/images/doctor.jpg"
+              src="/images/portrait.jpg"
               alt="Dr. Naveen Moghi's portrait"
               fill
               className="object-cover rounded-2xl"
@@ -17,7 +17,7 @@ const About = () => {
           </div>
 
           {/* Right side - Description */}
-          <div className="space-y-6">
+          <div className="space-y-6 mt-10">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
               Dr. Naveen Moghi
             </h2>

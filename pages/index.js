@@ -27,7 +27,7 @@ const index = () => {
       <Contact />
       {/* <Videos /> */}
       {/* <Banner2 /> */}
-      <Videotesti />
+      {/* <Videotesti /> */}
       <Testimonial />
 
       <Cont />

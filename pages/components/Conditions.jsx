@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import "swiper/css";
 
 import "swiper/css/pagination";
@@ -142,12 +142,12 @@ const Conditions = () => {
           </Swiper>
         </div>
 
-        <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5  ">
           {conditions.map((condition, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl overflow-hidden flex flex-col sm:flex-row w-full sm:w-auto border border-[#E0E0E0]">
-              <div className="relative w-full sm:w-56 h-48 sm:h-40">
+              className="bg-white rounded-xl overflow-hidden flex flex-col sm:flex-row w-full sm:w-auto border border-[#E0E0E0] ">
+              <div className="relative w-full sm:w-56 h-48 sm:h-44">
                 <Image
                   src={condition.image}
                   alt={condition.alt}
