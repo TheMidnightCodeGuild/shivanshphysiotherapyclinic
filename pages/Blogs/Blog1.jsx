@@ -12,7 +12,7 @@ const Blog1 = () => {
         
         <div className="prose prose-lg">
           <p className="mb-6">
-            If you're looking for top-tier physiotherapy services, look no further than Shivansh Physiotherapy Clinic. 
+            If you are looking for top-tier physiotherapy services, look no further than Shivansh Physiotherapy Clinic. 
             Located in the heart of Swami Vivekanand Colony, Ujjain, this clinic offers expert care to help you recover 
             from injuries, manage pain, and improve mobility. Under the guidance of Doctor Naveen Moghi, a trusted 
             physiotherapist, patients receive personalized treatment plans that cater to their specific needs.
@@ -20,7 +20,7 @@ const Blog1 = () => {
 
           <p className="mb-6">
             At Shivansh Physiotherapy Clinic, we specialize in a range of physiotherapy treatments to relieve pain, 
-            strengthen muscles, and promote overall well-being. Whether you're recovering from an injury, managing a 
+            strengthen muscles, and promote overall well-being. Whether you are recovering from an injury, managing a 
             chronic condition, or looking to enhance your physical performance, our clinic in Swami Vivekanand Colony, 
             Ujjain is equipped with the latest technology and techniques to help you reach your goals.
           </p>
@@ -33,7 +33,7 @@ const Blog1 = () => {
             <li>
               <strong>Expert Care from Doctor Naveen Moghi:</strong> Doctor Naveen Moghi is an experienced 
               physiotherapist who understands the importance of personalized treatment. He focuses on providing 
-              care that is specific to each patient's needs.
+              care that is specific to each patients needs.
             </li>
             <li>
               <strong>Comprehensive Physiotherapy Services:</strong> Our clinic provides a variety of services 

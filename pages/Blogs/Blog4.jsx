@@ -14,7 +14,7 @@ const Blog4 = () => {
 
       <p className="text-gray-600 mb-8">
         Physiotherapy is a highly effective treatment for managing pain and preventing further injury. 
-        Whether you're recovering from surgery, dealing with musculoskeletal pain, or seeking to improve 
+        Whether you are recovering from surgery, dealing with musculoskeletal pain, or seeking to improve 
         your overall health, Shivansh Physiotherapy Clinic offers a range of services designed to address 
         your needs.
       </p>
@@ -40,9 +40,9 @@ const Blog4 = () => {
       </ul>
 
       <p className="text-gray-600">
-        If you're looking for effective physiotherapy care in Swami Vivekanand Colony, Ujjain, visit 
+        If you are looking for effective physiotherapy care in Swami Vivekanand Colony, Ujjain, visit 
         Shivansh Physiotherapy Clinic. With the expertise of Doctor Naveen Moghi, you can rest assured 
-        that you're in good hands. Contact us today to schedule an appointment and begin your journey 
+        that you are in good hands. Contact us today to schedule an appointment and begin your journey 
         to better health.
       </p>
     </div>

@@ -8,14 +8,14 @@ const Blog2 = () => {
       
       <p className="text-gray-600 mb-6">
         Physiotherapy is not just for athletes and those recovering from major injuries. 
-        It's a vital part of maintaining your body's overall health and preventing future problems. 
+        Its a vital part of maintaining your body overall health and preventing future problems. 
         At Shivansh Physiotherapy Clinic, located in Swami Vivekanand Colony, Ujjain, we focus on 
         both rehabilitation and prevention to ensure you lead an active, pain-free life.
       </p>
 
       <p className="text-gray-600 mb-8">
         Under the supervision of Doctor Naveen Moghi, we offer tailored physiotherapy services 
-        designed to meet your individual needs. Whether you're suffering from back pain, arthritis, 
+        designed to meet your individual needs. Whether you are suffering from back pain, arthritis, 
         or sports injuries, physiotherapy at Shivansh Physiotherapy Clinic can help you get back 
         to your normal routine and improve your quality of life.
       </p>
