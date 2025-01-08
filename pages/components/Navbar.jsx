@@ -75,6 +75,11 @@ const Navbar = () => {
               Gallery
             </Link>
             <Link
+              href="/blog"
+              className="text-white hover:text-amber-800 hover:bg-[#FAD5A5] px-3 py-2 rounded-md text-base font-medium transition duration-300">
+              Blogs
+            </Link>
+            <Link
               href="/enquire"
               className="text-gray-900 hover:text-amber-800 hover:bg-[#FAD5A5] px-3 py-2 rounded-full text-base font-medium transition duration-300 border-2 border-amber-800 bg-white ">
               Book Now

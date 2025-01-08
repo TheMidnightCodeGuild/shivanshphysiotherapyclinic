@@ -9,8 +9,8 @@ const Hero = () => {
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="space-y-4 md:space-y-6 text-center md:text-left">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-gray-800 leading-tight">
-              Your Journey to <span className="text-orange-400">Recovery</span>{" "}
-              Starts Here
+              Dr. Naveen Moghi&apos;s <span className="text-orange-400">Physiotherapy</span>{" "}
+              Clinic
             </h1>
             <p className="text-base md:text-lg text-gray-600 leading-relaxed px-4 md:px-0">
               Expert physiotherapy care tailored to your needs. We help you
